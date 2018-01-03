@@ -18,7 +18,7 @@ http.createServer(function(req,res){
     break
 
     default:
-      fs.readFile(path.join(__dirname,pathObj.pathname),function(err,data){
+      fs.readFile(path.join(__dirname,'static',pathObj.pathname),function(err,data){
         //若pathObj.pathname != /loadMore ,访问pathObj.pathname对应的绝对路径下的静态文件
         if(err){
           res.writeHead(404,'not found')
@@ -31,3 +31,4 @@ http.createServer(function(req,res){
   }
 
 }).listen(8080)
+
